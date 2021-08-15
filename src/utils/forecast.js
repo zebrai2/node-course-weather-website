@@ -10,7 +10,9 @@ const forecast = (longitude, latitutde, callback) => {
     } else {
       const temperature = body.current.temperature
       const feelsLike = body.current.feelslike
-      callback(undefined, body.current.weather_descriptions[0] + '.  It is currently ' + temperature + ' degrees out.  It feels like ' + feelsLike + ' degrees out.')
+      const pressure = body.current.pressure
+
+      callback(undefined, body.current.weather_descriptions[0] + '.  It is currently ' + temperature + ' degrees out.  It feels like ' + feelsLike + ' degrees out. The current atmospheric pressure is ' + pressure)
     }
   })
 }
